@@ -1,7 +1,11 @@
 const express = require('express')
 const app = express()
+const bcrypt = require('bcrypt')
+
+const users =[]
 
 app.set('view-engine', 'ejs')
+app.use(express.urlencoded({ extended: false }))
 
 app.get('/', (req, res) => {
     res.render('index.ejs', {name: 'Rui'})
@@ -20,7 +24,7 @@ app.get('/register', (req, res) => {
 })
 
 app.post('/register', (req, res) => {
-
+    req.body.email
 })
 
 app.listen(3000)
