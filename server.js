@@ -25,6 +25,8 @@ app.use(session({
     ressave: false,
     saveUninitialized: false
 }))
+app.use(passport.initialize())
+app.use(passport.session())
 
 app.get('/', (req, res) => {
     res.render('index.ejs', {name: 'Rui'})
