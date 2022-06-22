@@ -21,8 +21,8 @@ app.set('view-engine', 'ejs')
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
 app.use(session({
-    secret: PerformanceObserverEntryList.env.SESSION_SECRET,
-    ressave: false,
+    secret: process.env.SESSION_SECRET,
+    resave: false,
     saveUninitialized: false
 }))
 app.use(passport.initialize())
